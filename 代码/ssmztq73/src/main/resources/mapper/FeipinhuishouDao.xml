@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.FeipinhuishouDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.FeipinhuishouEntity" id="feipinhuishouMap">
+        <result property="feipinmingcheng" column="feipinmingcheng"/>
+        <result property="feipinleixing" column="feipinleixing"/>
+        <result property="feipintupian" column="feipintupian"/>
+        <result property="shangjiabianhao" column="shangjiabianhao"/>
+        <result property="shangjiamingcheng" column="shangjiamingcheng"/>
+        <result property="shangjiadizhi" column="shangjiadizhi"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="huishoujiage" column="huishoujiage"/>
+        <result property="jiliangdanwei" column="jiliangdanwei"/>
+        <result property="huishoushijian" column="huishoushijian"/>
+        <result property="feipinxiangxi" column="feipinxiangxi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.FeipinhuishouVO" >
+		SELECT * FROM feipinhuishou  feipinhuishou         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.FeipinhuishouVO" >
+		SELECT  feipinhuishou.* FROM feipinhuishou  feipinhuishou
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.FeipinhuishouView" >
+
+		SELECT  feipinhuishou.* FROM feipinhuishou  feipinhuishou 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.FeipinhuishouView" >
+		SELECT * FROM feipinhuishou  feipinhuishou <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
